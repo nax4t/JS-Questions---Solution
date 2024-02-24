@@ -127,3 +127,84 @@ const sarah = Person('Sarah', 'O Conner')
 
 console.log(lydia)
 console.log(sarah)
+// lydia results into Person{firstName: 'Lydia', lastName: 'Hallie'}
+// while sarah results into undefined as new keywords wasn't used and this refers to the new empty object that we create.
+// If we don't use new keyword this refers to the global object.
+
+// Q # 12
+// Three phases of event propogation
+// Capture> Target > Bubble
+
+// Q # 13
+// All object have prototype ? False.
+// Base objects don't have prototypes.
+// BASE OBJECT? An object that is created by the user or using new keyword.
+
+// Q # 14
+function sum(a, b) {
+  return a + b
+}
+sum(1, '2')
+
+// '12' is the answer. JS is a dynamically typed language we don't specify what type is a variable.
+
+// Q # 15
+let number = 0
+console.log(number++)
+console.log(++number)
+console.log(number)
+// 0 2 2
+
+// Q # 15
+function checkAge(data) {
+  if (data === { age: 18 }) {
+    console.log('You are an adult.')
+  } else if (data == { age: 18 }) {
+    console.log('You are still an adult')
+  } else {
+    console.log("You don't have an age I guess.")
+  }
+}
+
+checkAge({ age: 18 })
+
+// 'You don't have an age I guess'.
+// In JS permitives are compared by value while objects are compared by reference.
+
+// Q # 15
+function getAge(...args) {
+  console.log(typeof args)
+}
+
+getAge(21)
+
+// object -- the ...args allows us to collect all the arguments into an array and an array is an object.
+
+// Q # 16
+function getAge() {
+  'use strict'
+  age = 21
+  console.log(age)
+}
+
+getAge()
+
+// results into Reference Error as we are using strict mode and I makes sure we accidently does not make global variables.
+
+// Q # 17
+const sum = eval('10*10+5')
+// 105 -- eval evaluates the expression
+
+// Q # 18
+sessionStorage.setItem('cool_secret', 123)
+// cool_secret is only accessible till the user closes the browser tab.
+
+// Q # 19
+var number = 8
+var number = 10
+
+console.log(number)
+// 10
+// we can declare var as many times as we want but the latest value will be used. While let and const do not allow the redeclaration.
+
+// Q # 20
